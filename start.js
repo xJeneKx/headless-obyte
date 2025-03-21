@@ -456,6 +456,7 @@ setTimeout(function(){
 					var consolidation = require('./consolidation.js');
 					consolidation.scheduleConsolidation(wallet_id, signer, conf.MAX_UNSPENT_OUTPUTS, conf.CONSOLIDATION_INTERVAL);
 				}
+				process.on('SIGHUP', () => console.log('ignoring SIGHUP'));
 			});
 		});
 	});
